@@ -130,6 +130,22 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem; }
 
+/* line 1, sass/components/_bg-video.scss */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden; }
+  /* line 11, sass/components/_bg-video.scss */
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 /* line 2, sass/components/_button.scss */
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -394,7 +410,7 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
@@ -405,17 +421,41 @@ body {
     width: 15rem;
     height: 15rem;
     float: left;
+    position: relative;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); }
-  /* line 29, sass/components/_story.scss */
+  /* line 30, sass/components/_story.scss */
   .story__img {
-    height: 100%; }
-  /* line 33, sass/components/_story.scss */
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all .5s; }
+  /* line 37, sass/components/_story.scss */
   .story__text {
     transform: skewX(12deg); }
+  /* line 41, sass/components/_story.scss */
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  /* line 55, sass/components/_story.scss */
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  /* line 60, sass/components/_story.scss */
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
 
 /* line 1, sass/layout/_header.scss */
 .header {
@@ -505,4 +545,4 @@ body {
 /* line 29, sass/pages/_home.scss */
 .section-stories {
   padding: 15rem 0;
-  background-color: #f7f7f7; }
+  position: relative; }
