@@ -1,3 +1,23 @@
+/*
+0     -  600px:      Phone
+600   -  900px:      Tablet portrait
+900   - 1200px:      Table landscape
+1200  - 1800px:      Normal style
+1800px+       :      Big screens
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+100em = 1600px
+600 / 1600 = 37.5%
+900 / 1600 = 56.25%
+1200 / 1600 = 75%
+1800 / 1600 = 112.5%
+ */
 /* line 1, sass/base/_base.scss */
 *,
 *:after,
@@ -9,8 +29,20 @@
 /* line 9, sass/base/_base.scss */
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    /* line 9, sass/base/_base.scss */
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    /* line 9, sass/base/_base.scss */
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    /* line 9, sass/base/_base.scss */
+    html {
+      font-size: 75%; } }
 
-/* line 14, sass/base/_base.scss */
+/* line 27, sass/base/_base.scss */
 body {
   box-sizing: border-box; }
 
