@@ -400,19 +400,23 @@ body {
   width: 90%;
   display: block;
   transition: all .3s; }
-  /* line 19, sass/components/_form.scss */
+  @media (max-width: 56.25em) {
+    /* line 6, sass/components/_form.scss */
+    .form__input {
+      width: 100%; } }
+  /* line 23, sass/components/_form.scss */
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     border-bottom: 3px solid #55c57a; }
-  /* line 25, sass/components/_form.scss */
+  /* line 29, sass/components/_form.scss */
   .form__input:focus:invalid {
     border-bottom: 3px solid #ff7730; }
-  /* line 29, sass/components/_form.scss */
+  /* line 33, sass/components/_form.scss */
   .form__input::-webkit-input-placeholder {
     color: #999; }
 
-/* line 34, sass/components/_form.scss */
+/* line 38, sass/components/_form.scss */
 .form__label {
   font-size: 1.2rem;
   font-weight: 700;
@@ -421,29 +425,34 @@ body {
   display: block;
   transition: all .3s; }
 
-/* line 43, sass/components/_form.scss */
+/* line 47, sass/components/_form.scss */
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem); }
 
-/* line 50, sass/components/_form.scss */
+/* line 54, sass/components/_form.scss */
 .form__radio-group {
   width: 49%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    /* line 54, sass/components/_form.scss */
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
-/* line 55, sass/components/_form.scss */
+/* line 64, sass/components/_form.scss */
 .form__radio-input {
   display: none; }
 
-/* line 59, sass/components/_form.scss */
+/* line 68, sass/components/_form.scss */
 .form__radio-label {
   font-size: 1.6rem;
   cursor: pointer;
   position: relative;
   padding-left: 4.5rem; }
 
-/* line 66, sass/components/_form.scss */
+/* line 75, sass/components/_form.scss */
 .form__radio-button {
   height: 3rem;
   width: 3rem;
@@ -453,7 +462,7 @@ body {
   position: absolute;
   left: 0;
   top: -.4rem; }
-  /* line 76, sass/components/_form.scss */
+  /* line 85, sass/components/_form.scss */
   .form__radio-button::after {
     content: "";
     display: block;
@@ -468,7 +477,7 @@ body {
     opacity: 0;
     transition: opacity .2s; }
 
-/* line 92, sass/components/_form.scss */
+/* line 101, sass/components/_form.scss */
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1; }
 
@@ -591,6 +600,42 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media (max-width: 56.25em) {
+    /* line 1, sass/components/_card.scss */
+    .card {
+      height: auto;
+      border-radius: 3px;
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      /* line 166, sass/components/_card.scss */
+      .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none; }
+        /* line 171, sass/components/_card.scss */
+        .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+      /* line 177, sass/components/_card.scss */
+      .card__details {
+        padding: 1rem 3rem; }
+      /* line 181, sass/components/_card.scss */
+      .card:hover .card__side--front {
+        transform: rotateY(-180deg); }
+      /* line 186, sass/components/_card.scss */
+      .card__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem; }
+      /* line 195, sass/components/_card.scss */
+      .card__price-box {
+        margin-bottom: 3rem; }
+      /* line 199, sass/components/_card.scss */
+      .card__price-value {
+        font-size: 6rem; } }
 
 /* line 1, sass/components/_story.scss */
 .story {
@@ -603,7 +648,16 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
-  /* line 16, sass/components/_story.scss */
+  @media (max-width: 56.25em) {
+    /* line 1, sass/components/_story.scss */
+    .story {
+      width: 100%;
+      padding: 4rem 4rem 4rem 7rem; } }
+  @media (max-width: 37.5em) {
+    /* line 1, sass/components/_story.scss */
+    .story {
+      transform: skewX(0); } }
+  /* line 25, sass/components/_story.scss */
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -614,15 +668,23 @@ body {
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); }
-  /* line 30, sass/components/_story.scss */
+    @media (max-width: 37.5em) {
+      /* line 25, sass/components/_story.scss */
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
+  /* line 43, sass/components/_story.scss */
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     transition: all .5s; }
-  /* line 37, sass/components/_story.scss */
+  /* line 50, sass/components/_story.scss */
   .story__text {
     transform: skewX(12deg); }
-  /* line 41, sass/components/_story.scss */
+    @media (max-width: 37.5em) {
+      /* line 50, sass/components/_story.scss */
+      .story__text {
+        transform: skewX(0); } }
+  /* line 58, sass/components/_story.scss */
   .story__caption {
     position: absolute;
     top: 50%;
@@ -635,11 +697,11 @@ body {
     opacity: 0;
     transition: all .5s;
     backface-visibility: hidden; }
-  /* line 55, sass/components/_story.scss */
+  /* line 72, sass/components/_story.scss */
   .story:hover .story__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
-  /* line 60, sass/components/_story.scss */
+  /* line 77, sass/components/_story.scss */
   .story:hover .story__img {
     transform: translateX(-4rem) scale(1);
     filter: blur(3px) brightness(80%); }
@@ -1080,11 +1142,28 @@ body {
 /* line 59, sass/pages/_home.scss */
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
-  background-size: cover;
-  height: 50rem;
+  background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
-  /* line 71, sass/pages/_home.scss */
+  @media (max-width: 75em) {
+    /* line 59, sass/pages/_home.scss */
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+      background-size: cover; } }
+  @media (max-width: 56.25em) {
+    /* line 59, sass/pages/_home.scss */
+    .book {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg);
+      background-size: cover; } }
+  /* line 89, sass/pages/_home.scss */
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      /* line 89, sass/pages/_home.scss */
+      .book__form {
+        width: 70%; } }
+    @media (max-width: 56.25em) {
+      /* line 89, sass/pages/_home.scss */
+      .book__form {
+        width: 100%; } }
