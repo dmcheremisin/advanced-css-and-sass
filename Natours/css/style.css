@@ -939,26 +939,30 @@ body {
 /* line 1, sass/layout/_header.scss */
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    /* line 1, sass/layout/_header.scss */
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     /* line 1, sass/layout/_header.scss */
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
-  /* line 21, sass/layout/_header.scss */
+  /* line 29, sass/layout/_header.scss */
   .header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem; }
-  /* line 27, sass/layout/_header.scss */
+  /* line 35, sass/layout/_header.scss */
   .header__logo {
     height: 3.5rem; }
-  /* line 31, sass/layout/_header.scss */
+  /* line 39, sass/layout/_header.scss */
   .header__text-box {
     position: absolute;
     top: 40%;
